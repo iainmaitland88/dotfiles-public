@@ -1,3 +1,6 @@
+-- disable swap files
+vim.opt.swapfile = false
+
 -- disable netrw on start
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
