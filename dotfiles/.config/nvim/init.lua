@@ -68,7 +68,7 @@ keymap.set("n", "<leader>-", ":ChooseWin<CR>")
 -- remap `gd`, `gD` et al to call `zz` after
 --
 -- setup plugins
-pcall(vim.cmd, "colorscheme nightfly")
+pcall(vim.cmd, "colorscheme dracula")
 
 local status, nvimtree = pcall(require, "nvim-tree")
 if status then
@@ -212,6 +212,7 @@ return require('packer').startup({function(use)
       {'rafamadriz/friendly-snippets'}, -- Optional
     }
   }
+  use { 'git@github.com:dracula/vim.git' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
