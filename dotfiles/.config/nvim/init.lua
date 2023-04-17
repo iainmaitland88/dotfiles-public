@@ -19,6 +19,8 @@ vim.opt.autoindent = true
 vim.opt.wrap = false
 
 -- search settings
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -40,9 +42,16 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- scrolling
+vim.opt.scrolloff = 10
+
 -- leader
 vim.g.mapleader = " " 
 vim.g.maplocalleader = " " 
+
+-- keep cursor in middle when jumping up and down
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- keymappings
 keymap = vim.keymap
@@ -133,6 +142,19 @@ if status then
   lspzero.setup()
 end
 
+local status, harpoon = pcall(require, "harpoon")
+if status then
+  local mark = require("harpoon.mark")
+  local ui = require("harpoon.ui")
+
+  vim.keymap.set("n", "<leader>a", mark.add_file)
+  vim.keymap.set("n", "<C-p>", ui.toggle_quick_menu)
+  vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
+  vim.keymap.set("n", "<C-j>", function() ui.nav_file(2) end)
+  vim.keymap.set("n", "<C-k>", function() ui.nav_file(3) end)
+  vim.keymap.set("n", "<C-l>", function() ui.nav_file(4) end)
+end
+
 -- packer
 local ensure_packer = function()
   local fn = vim.fn
@@ -154,6 +176,7 @@ return require('packer').startup({function(use)
   use 'christoomey/vim-tmux-navigator'
   use 'mbbill/undotree'
   use 'tpope/vim-fugitive'
+  use 'ThePrimeagen/harpoon'
   use 't9md/vim-choosewin'
   use {
       'numToStr/Comment.nvim',
