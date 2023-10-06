@@ -9,15 +9,14 @@ env:
 
 font:
   normal:
-    family: Hack Nerd Font
+    family: Fira Code
   bold:
-    family: Hack Nerd Font
+    family: Fira Code
   italic:
-    family: Hack Nerd Font
+    family: Fira Code
   bold_italic:
-    family: Hack Nerd Font
-  size: 16
-  use_thin_strokes: true
+    family: Fira Code
+  size: 14
 
 colors:
   # dracula
