@@ -1,10 +1,13 @@
 # Quick start
 
-Symlink config directories to `.config` like
+Symlink config files to `.config` like
 
 ```bash
-ln -s /Users/iain.maitland/Code/iainmaitland88/dotfiles-public/.config/nvim ~/.config
+mkdir ~/.config/nvim
+ln -s /Users/iain.maitland/Code/iainmaitland88/dotfiles-public/.config/nvim/init.lua ~/.config/nvim/init.lua
 ```
+
+Don't symlink directories or we can end up with extra files in here which make for annoying git statuses.
 
 ## tmux
 
