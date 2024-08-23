@@ -20,7 +20,7 @@ return {
         "typescript",
         "tsx",
         "yaml",
-	"toml",
+	      "toml",
         "html",
         "css",
         "markdown",
@@ -30,6 +30,7 @@ return {
         "vim",
         "dockerfile",
         "gitignore",
+        "python",
       },
     })
   end,
