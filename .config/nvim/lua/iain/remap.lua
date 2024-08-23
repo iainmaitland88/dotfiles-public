@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v") -- open vertical split
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- open horizontal split
 vim.keymap.set("n", "<leader>se", "<C-w>=") -- equalize splits
 vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close split
+vim.keymap.set("n", "<leader>so", "<C-w>o") -- close all except current split
 
 -- keep cursor in middle when jumping up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -26,3 +27,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- greatest remap ever stolen from Primagean
 -- don't replace clipboard with thing we're pasting over
 vim.keymap.set("x", "<leader>p", "\"_dP")
+
+-- move around tabs easier
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
+vim.keymap.set("n", "<leader>tn", ":tabnext<CR>")
+vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
+
+-- move around buffers easier
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
