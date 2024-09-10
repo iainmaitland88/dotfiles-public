@@ -20,7 +20,7 @@ return {
         "typescript",
         "tsx",
         "yaml",
-	      "toml",
+        "toml",
         "html",
         "css",
         "markdown",
