@@ -26,16 +26,15 @@ return {
 				:find()
 		end
 
-		vim.keymap.set("n", "<leader>hh", function()
-			toggle_telescope(harpoon:list())
-		end, { desc = "Open harpoon window" })
-
 		-- might not stick with these remappings, just until I find something better
 		vim.keymap.set("n", "<leader>ha", function()
 			harpoon:list():add()
 		end)
-		-- view harpooned files with harpoon's explorer
+		-- uncomment to view harpooned files with harpoon's explorer
 		-- vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+		vim.keymap.set("n", "<leader>hh", function()
+			toggle_telescope(harpoon:list())
+		end, { desc = "Open harpoon window" })
 
 		vim.keymap.set("n", "<leader>h1", function()
 			harpoon:list():select(1)
