@@ -3,13 +3,6 @@ vim.g.mapleader = " "
 -- open netrw
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
--- splits
-vim.keymap.set("n", "<leader>sv", "<C-w>v") -- open vertical split
-vim.keymap.set("n", "<leader>sh", "<C-w>s") -- open horizontal split
-vim.keymap.set("n", "<leader>se", "<C-w>=") -- equalize splits
-vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close split
-vim.keymap.set("n", "<leader>so", "<C-w>o") -- close all except current split
-
 -- keep cursor in middle when jumping up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
