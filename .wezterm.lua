@@ -5,6 +5,9 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
+config.automatically_reload_config = true
+config.window_close_confirmation = "NeverPrompt"
+config.window_decorations = "RESIZE"
 
 -- For example, changing the initial geometry for new windows:
 config.initial_cols = 120
