@@ -14,6 +14,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.enable_tab_bar = false
 config.window_frame = {
 	font = wezterm.font("UbuntuMono Nerd Font"),
 	font_size = 16,
@@ -57,7 +58,7 @@ config.keys = {
   move_pane('k', 'Up'),
   move_pane('h', 'Left'),
   move_pane('l', 'Right'),
-    {
+  {
     key = '"',
     mods = 'LEADER',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
@@ -66,6 +67,31 @@ config.keys = {
     key = '%',
     mods = 'LEADER',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = 'z',
+    mods = 'LEADER',
+    action = wezterm.action.TogglePaneZoomState,
+  },
+  {
+    key = 'x',
+    mods = 'LEADER',
+    action = wezterm.action.CloseCurrentPane { confirm = true },
+  },
+  {
+    key = '{',
+    mods = 'LEADER',
+    action = wezterm.action.RotatePanes 'CounterClockwise',
+  },
+  {
+    key = '}',
+    mods = 'LEADER',
+    action = wezterm.action.RotatePanes 'Clockwise',
+  },
+  {
+    key = 't',
+    mods = 'LEADER',
+    action = wezterm.action.ShowTabNavigator
   },
   {
     key = 'r',
