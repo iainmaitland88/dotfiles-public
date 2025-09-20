@@ -19,11 +19,21 @@ return {
 
 		telescope.load_extension("fzf")
 
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- searches files in cwd
-		vim.keymap.set("n", "<leader>fg", builtin.git_files, {}) -- searches files in Git repo (ignores files in .gitignore)
-		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {}) -- searches recent files
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, {}) -- searches files in buffer
-		vim.keymap.set("n", "<leader>fs", builtin.live_grep, {}) -- searches content of all files in cwd
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, {}) -- searches in help tags
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {desc = "[F]ind [F]iles"})
+		vim.keymap.set("n", "<leader>fg", builtin.git_files, {desc = "[F]ind [G]it Files"})
+		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {desc = "[F]ind [R]ecent Files"})
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, {desc = "[F]ind [B]uffers"})
+		vim.keymap.set("n", "<leader>fs", builtin.live_grep, {desc = "[F]ind [S]tring"})
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, {desc = "[F]ind [H]elp"})
+
+     -- It's also possible to pass additional configuration options.
+      --  See `:help telescope.builtin.live_grep()` for information about particular keys
+      vim.keymap.set('n', '<leader>f.', function()
+        builtin.live_grep {
+          grep_open_files = true,
+          prompt_title = 'Live Grep in Open Files',
+        }
+      end, { desc = '[F]ind [.] in Open Files' })
+
 	end,
 }

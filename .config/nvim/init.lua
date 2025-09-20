@@ -23,7 +23,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- open netrw
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, {desc = "[E]xplore"})
 
 -- keep cursor in middle when jumping up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -49,14 +49,14 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- move around tabs easier
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
-vim.keymap.set("n", "<leader>tn", ":tabnext<CR>")
-vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>", {desc = "[T]ab [O]pen"})
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", {desc = "[T]ab e[X]it"})
+vim.keymap.set("n", "<leader>tn", ":tabnext<CR>", {desc = "[T]ab [N]ext"})
+vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>", {desc = "[T]ab [P]revious"})
 
 -- move around buffers easier
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", {desc = "[B]uffer [N]ext"})
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", {desc = "[B]uffer [P]revious"})
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
