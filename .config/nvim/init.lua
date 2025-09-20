@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- open netrw
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
@@ -41,6 +42,12 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- don't replace clipboard with thing we're pasting over
 vim.keymap.set("x", "<leader>p", '"_dP')
 
+-- move around splits easier
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
 -- move around tabs easier
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
@@ -50,6 +57,9 @@ vim.keymap.set("n", "<leader>tp", ":tabprevious<CR>")
 -- move around buffers easier
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+
+-- Preview substitutions live, as you type!
+vim.o.inccommand = 'split'
 
 vim.cmd("let g:netrw_liststyle = 3")
 
@@ -79,8 +89,8 @@ vim.opt.smartcase = true
 vim.opt.cursorline = true
 
 -- appearance
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
+-- vim.opt.termguicolors = true
+-- vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 
 -- backspace
@@ -95,6 +105,15 @@ vim.opt.splitbelow = true
 
 -- scrolling
 vim.opt.scrolloff = 10
+--
+-- Highlight when yanking text
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.hl.on_yank()
+	end,
+})
 
 -- Setup lazy.nvim
 require("lazy").setup({
