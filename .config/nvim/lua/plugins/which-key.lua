@@ -38,7 +38,7 @@ return {
 
 		-- Documet existing key chains
 		spec = {
-			{ "<leader>f", group = "[F]ind" },
+			{ "<leader>s", group = "[S]earch" },
 			{ "<leader>b", group = "[B]uffer" },
 			{ "<leader>t", group = "[T]ab" },
 			{ "<leader>h", group = "[H]arpoon" },
