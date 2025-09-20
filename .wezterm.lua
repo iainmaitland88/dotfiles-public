@@ -23,21 +23,21 @@ config.font = wezterm.font("UbuntuMono Nerd Font")
 config.font_size = 16
 config.line_height = 1.4
 config.color_scheme = "Tokyo Night"
-config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 local function move_pane(key, direction)
-  return {
-    key = key,
-    mods = 'LEADER',
-    action = wezterm.action.ActivatePaneDirection(direction),
-  }
+	return {
+		key = key,
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection(direction),
+	}
 end
 
 local function resize_pane(key, direction)
-  return {
-    key = key,
-    action = wezterm.action.AdjustPaneSize { direction, 3 }
-  }
+	return {
+		key = key,
+		action = wezterm.action.AdjustPaneSize({ direction, 3 }),
+	}
 end
 
 config.keys = {
@@ -54,63 +54,63 @@ config.keys = {
 		mods = "OPT",
 		action = wezterm.action.SendKey({ key = "f", mods = "ALT" }),
 	},
-  move_pane('j', 'Down'),
-  move_pane('k', 'Up'),
-  move_pane('h', 'Left'),
-  move_pane('l', 'Right'),
-  {
-    key = '"',
-    mods = 'LEADER',
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-  },
-  {
-    key = '%',
-    mods = 'LEADER',
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
-  },
-  {
-    key = 'z',
-    mods = 'LEADER',
-    action = wezterm.action.TogglePaneZoomState,
-  },
-  {
-    key = 'x',
-    mods = 'LEADER',
-    action = wezterm.action.CloseCurrentPane { confirm = true },
-  },
-  {
-    key = '{',
-    mods = 'LEADER',
-    action = wezterm.action.RotatePanes 'CounterClockwise',
-  },
-  {
-    key = '}',
-    mods = 'LEADER',
-    action = wezterm.action.RotatePanes 'Clockwise',
-  },
-  {
-    key = 't',
-    mods = 'LEADER',
-    action = wezterm.action.ShowTabNavigator
-  },
-  {
-    key = 'r',
-    mods = 'LEADER',
-    action = wezterm.action.ActivateKeyTable {
-      name = 'resize_panes',
-      one_shot = false,
-      timeout_milliseconds = 1000,
-    }
-  },
+	move_pane("j", "Down"),
+	move_pane("k", "Up"),
+	move_pane("h", "Left"),
+	move_pane("l", "Right"),
+	{
+		key = '"',
+		mods = "LEADER",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "%",
+		mods = "LEADER",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "z",
+		mods = "LEADER",
+		action = wezterm.action.TogglePaneZoomState,
+	},
+	{
+		key = "x",
+		mods = "LEADER",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+	{
+		key = "{",
+		mods = "LEADER",
+		action = wezterm.action.RotatePanes("CounterClockwise"),
+	},
+	{
+		key = "}",
+		mods = "LEADER",
+		action = wezterm.action.RotatePanes("Clockwise"),
+	},
+	{
+		key = "t",
+		mods = "LEADER",
+		action = wezterm.action.ShowTabNavigator,
+	},
+	{
+		key = "r",
+		mods = "LEADER",
+		action = wezterm.action.ActivateKeyTable({
+			name = "resize_panes",
+			one_shot = false,
+			timeout_milliseconds = 1000,
+		}),
+	},
 }
 
 config.key_tables = {
-  resize_panes = {
-    resize_pane('j', 'Down'),
-    resize_pane('k', 'Up'),
-    resize_pane('h', 'Left'),
-    resize_pane('l', 'Right'),
-  },
+	resize_panes = {
+		resize_pane("j", "Down"),
+		resize_pane("k", "Up"),
+		resize_pane("h", "Left"),
+		resize_pane("l", "Right"),
+	},
 }
 
 -- Finally, return the configuration to wezterm:
