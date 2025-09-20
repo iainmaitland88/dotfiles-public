@@ -96,7 +96,7 @@ vim.opt.signcolumn = "yes"
 -- backspace
 vim.opt.backspace = "indent,eol,start"
 
--- clipboard
+-- Sync clipboard between OS and Neovim.
 vim.opt.clipboard:append("unnamedplus")
 
 -- split windows
@@ -105,7 +105,10 @@ vim.opt.splitbelow = true
 
 -- scrolling
 vim.opt.scrolloff = 10
---
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- Highlight when yanking text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
