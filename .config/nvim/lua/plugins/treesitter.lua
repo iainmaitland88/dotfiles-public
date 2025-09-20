@@ -7,30 +7,39 @@ return {
 		local treesitter = require("nvim-treesitter.configs")
 
 		-- configure treesitter
-		treesitter.setup({ -- enable syntax highlighting
+		treesitter.setup({
+      -- enable syntax highlighting
 			highlight = {
 				enable = true,
 			},
+
+      -- Autoinstall languages that are not installed
+      auto_install = true,
+
 			-- enable indentation
 			indent = { enable = true },
+
 			-- ensure these language parsers are installed
-			ensure_installed = {
-				"json",
-				"javascript",
-				"typescript",
-				"tsx",
-				"yaml",
-				"toml",
-				"html",
-				"css",
-				"markdown",
-				"markdown_inline",
-				"bash",
-				"lua",
-				"vim",
-				"dockerfile",
-				"gitignore",
-				"python",
+      ensure_installed = {
+        "bash",
+        "css",
+        "diff",
+        "dockerfile",
+        "gitignore",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "luadoc",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml"
 			},
 		})
 	end,
