@@ -115,6 +115,8 @@ ctrl-alt-shift-u = 'workspace U'
 ctrl-alt-shift-i = 'workspace I'
 ctrl-alt-shift-o = 'workspace O'
 ctrl-alt-shift-p = 'workspace P'
+ctrl-alt-shift-n = 'workspace N'
+ctrl-alt-shift-m = 'workspace M'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-alt-shift-cmd-y = 'move-node-to-workspace Y'
@@ -122,6 +124,12 @@ ctrl-alt-shift-cmd-u = 'move-node-to-workspace U'
 ctrl-alt-shift-cmd-i = 'move-node-to-workspace I'
 ctrl-alt-shift-cmd-o = 'move-node-to-workspace O'
 ctrl-alt-shift-cmd-p = 'move-node-to-workspace P'
+ctrl-alt-shift-cmd-n = 'move-node-to-workspace N'
+ctrl-alt-shift-cmd-m = 'move-node-to-workspace M'
+
+[workspace-to-monitor-force-assignment]
+n = '^built-in retina display$'
+m = '^built-in retina display$'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 ctrl-alt-shift-tab = 'workspace-back-and-forth'
