@@ -28,6 +28,9 @@ return {
 		pcall(require("telescope").load_extension, "ui-select")
 
 		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+		vim.keymap.set("n", "<leader>sa", function()
+			builtin.find_files({ hidden = true })
+		end, { desc = "[S]earch [A]ll Files" })
 		vim.keymap.set("n", "<leader>sg", builtin.git_files, { desc = "[S]earch [G]it Files" })
 		vim.keymap.set("n", "<leader>sr", builtin.oldfiles, { desc = "[S]earch [R]ecent Files" })
 		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
