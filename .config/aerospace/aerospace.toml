@@ -90,9 +90,8 @@ outer.right =      10
 # alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-# I don't know why the hyper key doesn't work here. Will figure out some other time
-alt-shift-slash = 'layout tiles horizontal vertical'
-alt-shift-comma = 'layout accordion horizontal vertical'
+ctrl-alt-shift-cmd-0 = 'layout tiles horizontal vertical'
+ctrl-alt-shift-cmd-9 = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 ctrl-alt-shift-h = 'focus left'
