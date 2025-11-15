@@ -1,12 +1,39 @@
 # Quick start
 
-Symlink config files to `.config` like
+Dotfiles. Uses [stow](https://www.gnu.org/software/stow/)
+
+Most dotfiles destination is `$HOME/.config` so they have a directory structure
+that mirrors that to make stowing easy.
 
 ```bash
-mkdir ~/.config/nvim
-ln -s /Users/iain.maitland/Code/iainmaitland88/dotfiles-public/.config/nvim/init.lua ~/.config/nvim/init.lua
+aerospace # <-- package name used by stow
+└── .config # <-- stow will create symlinks from here
+    └── aerospace
+        └── aerospace.toml
 ```
 
-⚠️ Don't symlink directories or we can end up with extra files in here which make for annoying git statuses.
+💡 Set `$STOW_DIR` to `$HOME` to avoid passing `-t` option on below commands.
 
-I'm not using every dotfile or config in this repo. Some are left over from apps I no longer use but kept in case I go back to them.
+Stow a package
+```bash
+stow -t ~ aerospace
+```
+
+Un-stow a package
+```bash
+stow -t ~ -D aerospace
+```
+
+If the dotfile is actually a dotfile, like `.tmux.conf`, and should go in
+`$HOME` and not `$HOME/.config`, then put it in a directory prefixed with
+`dot-` and use the `--dotfiles` option with `stow`.
+
+Stow a dotfiles flavoured package
+```bash
+stow --dotfiles -t ~ dot-tmux
+```
+
+Un-stow a dotfiles flavoured package
+```bash
+stow --dotfiles -t ~ -D dot-tmux
+```
