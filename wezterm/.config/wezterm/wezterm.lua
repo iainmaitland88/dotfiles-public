@@ -22,7 +22,7 @@ config.window_frame = {
 config.font = wezterm.font("UbuntuMono Nerd Font")
 config.font_size = 16
 config.line_height = 1.4
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Catppuccin Mocha"
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 local function move_pane(key, direction)
