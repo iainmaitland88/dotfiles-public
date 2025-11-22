@@ -22,9 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- open netrw
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "[E]xplore" })
-
 -- keep cursor in middle when jumping up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
