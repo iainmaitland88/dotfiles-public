@@ -125,7 +125,7 @@ config.keys = {
 		}),
 	},
 	{
-		key = "Enter",
+		key = "!",
 		mods = "LEADER",
 		action = wezterm.action_callback(function(win, pane)
 			local tab, window = pane:move_to_new_tab()
