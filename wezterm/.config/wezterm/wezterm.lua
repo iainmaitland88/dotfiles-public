@@ -124,6 +124,13 @@ config.keys = {
 			mode = "SwapWithActive",
 		}),
 	},
+	{
+		key = "Enter",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			local tab, window = pane:move_to_new_tab()
+		end),
+	},
 }
 
 config.key_tables = {
