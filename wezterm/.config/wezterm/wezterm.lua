@@ -41,19 +41,6 @@ local function resize_pane(key, direction)
 end
 
 config.keys = {
-	{
-		key = "LeftArrow",
-		mods = "OPT",
-		action = wezterm.action.SendKey({
-			key = "b",
-			mods = "ALT",
-		}),
-	},
-	{
-		key = "RightArrow",
-		mods = "OPT",
-		action = wezterm.action.SendKey({ key = "f", mods = "ALT" }),
-	},
 	move_pane("j", "Down"),
 	move_pane("k", "Up"),
 	move_pane("h", "Left"),
@@ -141,6 +128,9 @@ config.key_tables = {
 		resize_pane("l", "Right"),
 	},
 }
+
+-- Plugins
+wezterm.plugin.require("https://github.com/iainmaitland88/hopper.wezterm").apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config
