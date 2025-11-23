@@ -14,7 +14,7 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.window_frame = {
 	font = wezterm.font("UbuntuMono Nerd Font"),
 	font_size = 16,
@@ -131,6 +131,20 @@ config.key_tables = {
 
 -- Plugins
 wezterm.plugin.require("https://github.com/iainmaitland88/hopper.wezterm").apply_to_config(config)
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	sections = {
+		tabline_a = { "mode" },
+		tabline_b = {},
+		tabline_c = {},
+		tab_active = { "index", "zoomed" },
+		tab_inactive = { "index" },
+		tabline_x = { "ram", "cpu" },
+		tabline_y = { "workspace" },
+		tabline_z = { "domain" },
+	},
+})
+tabline.apply_to_config(config)
 
 -- Finally, return the configuration to wezterm:
 return config
