@@ -117,6 +117,13 @@ config.keys = {
 			end),
 		}),
 	},
+	{
+		key = "Space",
+		mods = "LEADER",
+		action = wezterm.action.PaneSelect({
+			mode = "SwapWithActive",
+		}),
+	},
 }
 
 config.key_tables = {
