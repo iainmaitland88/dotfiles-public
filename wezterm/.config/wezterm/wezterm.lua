@@ -135,12 +135,12 @@ local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabl
 tabline.setup({
 	sections = {
 		tabline_a = { "mode" },
-		tabline_b = {},
-		tabline_c = {},
-		tab_active = { "index", "zoomed" },
-		tab_inactive = { "index" },
-		tabline_x = { "ram", "cpu" },
-		tabline_y = { "workspace" },
+		tabline_b = { "workspace" },
+		tabline_c = { "  " },
+		tab_active = { "process", "index", "zoomed" },
+		tab_inactive = { "process", "index" },
+		tabline_x = {},
+		tabline_y = { "ram", "cpu" },
 		tabline_z = { "domain" },
 	},
 })
