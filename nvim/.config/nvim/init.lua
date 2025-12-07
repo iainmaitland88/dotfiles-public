@@ -22,6 +22,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- if we're inside tmux then use its clipboard
+if os.getenv("TMUX") then
+	vim.g.clipboard = "tmux"
+end
+
 -- keep cursor in middle when jumping up and down
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
