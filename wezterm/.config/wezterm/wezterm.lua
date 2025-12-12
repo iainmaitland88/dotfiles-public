@@ -17,10 +17,10 @@ config.window_padding = {
 config.enable_tab_bar = true
 config.window_frame = {
 	font = wezterm.font("UbuntuMono Nerd Font"),
-	font_size = 16,
+	font_size = 18,
 }
 config.font = wezterm.font("UbuntuMono Nerd Font")
-config.font_size = 16
+config.font_size = 18
 config.line_height = 1.4
 config.color_scheme = "Catppuccin Mocha"
 config.enable_tab_bar = false
