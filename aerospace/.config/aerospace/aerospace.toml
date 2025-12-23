@@ -110,31 +110,27 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-s = 'workspace S'
-alt-b = 'workspace B'
-alt-n = 'workspace N'
-alt-m = 'workspace M'
 alt-u = 'workspace U'
 alt-i = 'workspace I'
 alt-o = 'workspace O'
 alt-p = 'workspace P'
+alt-n = 'workspace N'
+alt-m = 'workspace M'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-s = 'move-node-to-workspace S'
-alt-shift-b = 'move-node-to-workspace B'
-alt-shift-n = 'move-node-to-workspace N'
-alt-shift-m = 'move-node-to-workspace M'
 alt-shift-u = 'move-node-to-workspace U'
 alt-shift-i = 'move-node-to-workspace I'
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = 'move-node-to-workspace P'
+alt-shift-n = 'move-node-to-workspace N'
+alt-shift-m = 'move-node-to-workspace M'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 # alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-alt-enter = "fullscreen"
+alt-shift-f = "fullscreen"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
